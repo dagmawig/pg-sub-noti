@@ -1,0 +1,15 @@
+{
+  "name": "postgres-queue",
+  "version": "1.0.0",
+  "description": "a queue system that uses postgres trigger to send message",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dag G",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "pg": "^8.12.0"
+  }
+}
