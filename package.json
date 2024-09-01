@@ -1,7 +1,16 @@
 {
-  "name": "postgres-subscribe-notify",
+  "name": "pg-sub-noti",
   "version": "1.0.0",
   "description": "a queue library that uses postgres trigger to send message",
+  "keywords": [
+    "postgres",
+    "notify",
+    "subscribe",
+    "trigger",
+    "message",
+    "queue",
+    "functions"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "jest /__tests__/index.spec.js",
@@ -12,7 +21,9 @@
   "devDependencies": {
     "dotenv": "^16.4.5",
     "jest": "^29.7.0",
-    "nodemon": "^3.1.4",
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
     "pg": "^8.12.0"
   }
 }
