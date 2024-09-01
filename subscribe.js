@@ -1,6 +1,6 @@
 // subscribes a client to a channel
-async function subscribe(client, channel) {
-
+async function subscribe(subArgs) {
+    const {client, channel} = subArgs;
     const notiPromise = new Promise(resolve=> {
         client.on('notification', msg => {
             const newRow = JSON.parse(msg.payload);

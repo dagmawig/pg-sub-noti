@@ -3,8 +3,8 @@
 // table needs to at least contain the columns 'channel' and 'data'
 // 'channel' column is of postgres text type
 // 'data' column is of postgres json type
-function publish(client, schema, table, channel, data) {
-
+function publish(pubArgs) {
+    const {client, schema, table, channel, data} = pubArgs;
     const text = `INSERT into ${schema}.${table}(channel, data) values ($1, $2) RETURNING *`;
     const values = [channel, data];
 
