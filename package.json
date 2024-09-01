@@ -1,7 +1,7 @@
 {
-  "name": "postgres-queue",
+  "name": "postgres-subscribe-notify",
   "version": "1.0.0",
-  "description": "a queue system that uses postgres trigger to send message",
+  "description": "a queue library that uses postgres trigger to send message",
   "main": "index.js",
   "scripts": {
     "test": "jest /__tests__/index.spec.js",
