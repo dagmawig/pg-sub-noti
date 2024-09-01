@@ -1,5 +1,7 @@
 const { Client } = require('pg');
 const subscribe = require('./subscribe');
+const publish = require('./publish');
+const { response } = require('express');
 require('dotenv').config();
 
 
@@ -22,4 +24,7 @@ pgClient.connect(err => {
     }
 });
 
-subscribe(pgClient, 'tree');
+Promise.resolve(subscribe(pgClient, 'tree')).then(response=> {
+    console.log(response)
+})
+//publish(pgClient, 'queue', 'message', 'tree', {name: 'DAG'})
