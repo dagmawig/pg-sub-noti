@@ -4,16 +4,15 @@
   "description": "a queue system that uses postgres trigger to send message",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest /__tests__/index.spec.js",
     "start": "nodemon index.js"
   },
   "author": "Dag G",
   "license": "ISC",
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "pg": "^8.12.0"
-  },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "dotenv": "^16.4.5",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.4",
+    "pg": "^8.12.0"
   }
 }
