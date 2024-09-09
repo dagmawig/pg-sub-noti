@@ -1,5 +1,5 @@
 {
-  "name": "treetracker-pg-sub-noti",
+  "name": "pg-sub-noti",
   "version": "1.0.0",
   "description": "a queue library that uses postgres inbuilt trigger/notify/listen functionality to send and receive message",
   "keywords": [
