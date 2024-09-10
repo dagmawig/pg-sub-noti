@@ -10,10 +10,10 @@ describe('tests client subscription', () => {
         done();
     });
 
-    // tests clients subscription to a channel
-    it('subscribes a client', (done) => {
+     // tests clients subscription to a channel
+     it('subscribes a client', (done) => {
 
-        Promise.resolve(subscribe({ client: pgClient, channel: 'news' })).then(response => {
+        subscribe({ client: pgClient, channel: 'news' }).then(response => {
             expect(response).toMatchObject({ channel: 'news', data: { name: 'DAG' } })
             done();
         })
@@ -24,7 +24,7 @@ describe('tests client subscription', () => {
 
     // tests message fetching functionality
     it('fetches past messages', (done) => {
-        Promise.resolve(fetch({client: pgClient, schema: 'queue', table: 'message', channel: 'tree', from: '2024-08-10', to: '2024-08-23'})).then(response => {
+        fetch({client: pgClient, schema: 'queue', table: 'message', channel: 'tree', from: '2024-08-10', to: '2024-08-23'}).then(response => {
             expect(response[0]).toMatchObject({
                 "id": "9a02e4bd-ab0f-42df-b6ea-f2ffaedafa4d",
                 "channel": "tree",
@@ -39,7 +39,3 @@ describe('tests client subscription', () => {
 
     }, 30000)
 });
-
-
-
-

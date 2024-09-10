@@ -98,11 +98,10 @@ Subscribe/Publish/Fetch like so.
 const {subscribe, publish, fetch} = require('pg-sub-noti');  
 
 // to subscribe to a channel  
-Promise.resolve(  
-            subscribe({client:pgClient, channel: 'news'})).then(message=>{  
-                    // this is the message received  
-                    console.log(message);  
-                });  
+subscribe({client:pgClient, channel: 'news'}).then(message=>{  
+        // this is the message received  
+        console.log(message);  
+    });  
 
 // to publish a message  
 publish({  
@@ -115,16 +114,16 @@ publish({
 
 // to fetch message  
 // if no end date is given it fetches mssages up to present time  
-Promise.resolve(  
-        fetch{  
-            client: pgClient,  
-            schema: 'queue',  
-            table: 'message',  
-            channel: 'news',  
-            from: '2024-08-10'  
-            to: '2024-08-18' // optional  
-        }  
-).then(messages=>{  
+
+fetch({  
+    client: pgClient,  
+    schema: 'queue',  
+    table: 'message',  
+    channel: 'news',  
+    from: '2024-08-10'  
+    to: '2024-08-18' // optional  
+})  
+.then(messages=>{  
     // returns array of messages sent between the date ranges  
     console.log(messages);  
 });  
