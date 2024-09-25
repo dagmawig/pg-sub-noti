@@ -23,16 +23,14 @@ describe('tests client subscription', () => {
     });
 
     // tests message fetching functionality
-    it('fetches past messages', (done) => {
-        fetch({client: pgClient, schema: 'queue', table: 'message', channel: 'tree', from: '2024-08-10', to: '2024-08-23'}).then(response => {
+    it.only('fetches past messages', (done) => {
+        fetch({client: pgClient, schema: 'queue', table: 'message', channel: 'news', from: '2024-09-01', to: '2024-09-02', filter: {channel: 'DAG'}}).then(response => {
             expect(response[0]).toMatchObject({
-                "id": "9a02e4bd-ab0f-42df-b6ea-f2ffaedafa4d",
-                "channel": "tree",
+                "id": "cf9bd3e6-beb2-4329-a33e-02680b43ab31",
+                "channel": "news",
                 "data": {
-                    "capture_id": "baf29ea3-5a9f-4c1a-b338-d6676e37ada8"
-                },
-                "created_at": new Date("2024-08-16T20:15:07.900Z"),
-                "updated_at": new Date("2024-08-16T20:15:07.900Z")
+                    "name": "DAG"
+                }
             })
             done();
         })

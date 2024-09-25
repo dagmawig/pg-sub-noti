@@ -122,6 +122,7 @@ fetch({
     channel: 'news',  
     from: '2024-08-10'  
     to: '2024-08-18' // optional  
+    filter: {sport: 'NFL'}  // filters using string key-value pairs on the data column
 })  
 .then(messages=>{  
     // returns array of messages sent between the date ranges  
